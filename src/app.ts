@@ -5,7 +5,7 @@ let cnt = 0;
 let classCntMap = new Map<number, number>();
 
 while (true) {
-    let filename: string = `test (${cnt}).txt`;
+    let filename: string = `./export/labels/test (${cnt}).txt`;
     if (fs.existsSync(filename) === false) {
         console.log('search done');
         break;
@@ -38,17 +38,18 @@ let trainData: string = '';
 let testData: string = '';
 
 while (true) {
-    let filename: string = `test (${cnt}).txt`;
-    if (fs.existsSync(filename) === false) {
+    let txtFilename: string = `./export/labels/test (${cnt}).txt`;
+    if (fs.existsSync(txtFilename) === false) {
         console.log('split done');
         break;
     }
-    let data = fs.readFileSync(filename).toString('utf8');
+    let data = fs.readFileSync(txtFilename).toString('utf8');
     data = data.split('\n')[0];
     let splt = data.split(' ');
     let classType: number = Number(splt[0]);
 
-    let finalName: string = path.join(rootDir, filename);
+    let jpgFilename: string = `./export/images/test (${cnt}).jpg`;
+    let finalName: string = path.join(rootDir, jpgFilename);
 
     if (classCntMap.has(classType) === false || classCntMap.get(classType) <= 0) {
         trainData += finalName + '\n';
