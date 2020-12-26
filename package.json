@@ -1,0 +1,41 @@
+{
+    "name": "dataset_spliter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run pkg-win",
+        "start": "ts-node ./src/main.ts",
+        "copy:assets": "cpx -p \"./assets/**\" \"./dist/assets\"",
+        "pkg-win": "tsc && pkg ./ -t node10-win-x64 --output ./build/dataset_spliter.exe",
+        "clear:assets": "del-cli -f \"./dist/assets/**\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NurimOnsemiro/dataset_spliter.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/NurimOnsemiro/dataset_spliter/issues"
+    },
+    "homepage": "https://github.com/NurimOnsemiro/dataset_spliter#readme",
+    "bin": {
+        "app": "./dist/src/app.js"
+    },
+    "pkg": {
+        "assets": []
+    },
+    "devDependencies": {
+        "@types/mkdirp": "^1.0.1",
+        "@types/node": "^14.14.14",
+        "cpx": "^1.5.0",
+        "del-cli": "^3.0.1",
+        "prettier": "^2.2.1"
+    },
+    "dependencies": {
+        "jimp": "^0.16.1",
+        "mkdirp": "^1.0.4"
+    }
+}
