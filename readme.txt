@@ -1,0 +1,1 @@
+dataset_spliter.exe는 dataset 폴더에서 실행시켜 주세요
